@@ -218,7 +218,7 @@ def getMotorState(hcomm, axis: int, wait=SYNCHRONOUS):
     call_acsc(acs.acsc_GetMotorState, hcomm, axis, byref(state), wait)
     state = state.value
     mst = {
-        "enabled": hex(state)[-1] == "1",
+        "enabled": hex(state)[-1] == "3",
         "in position": hex(state)[-2] == "1",
         "moving": hex(state)[-2] == "2",
         "accelerating": hex(state)[-2] == "4",
